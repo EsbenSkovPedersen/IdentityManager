@@ -79,6 +79,7 @@ namespace IdentityManager.Host.IdSvr
                     RequireConsent = false,
                     RedirectUris = new List<string>{
                         "https://localhost:44337",
+                        "https://dev-sso-identity-eu-w-wdx-w.azurewebsites.net/"
                     },
                     IdentityProviderRestrictions = new List<string>(){Thinktecture.IdentityServer.Core.Constants.PrimaryAuthenticationType}
                 },

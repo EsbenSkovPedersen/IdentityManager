@@ -29,8 +29,8 @@ using IdentityManager.Host;
 using System.Threading.Tasks;
 using System.IdentityModel.Tokens;
 
-[assembly: OwinStartup(typeof(StartupWithLocalhostSecurity))]
-//[assembly: OwinStartup(typeof(StartupWithHostCookiesSecurity))]
+//[assembly: OwinStartup(typeof(StartupWithLocalhostSecurity))]
+[assembly: OwinStartup(typeof(StartupWithHostCookiesSecurity))]
 
 namespace IdentityManager.Host
 {
@@ -77,9 +77,9 @@ namespace IdentityManager.Host
             app.UseOpenIdConnectAuthentication(new Microsoft.Owin.Security.OpenIdConnect.OpenIdConnectAuthenticationOptions
             {
                 AuthenticationType = "oidc",
-                Authority = "https://localhost:44337/ids",
+                Authority = "https://dev-sso-identity-eu-w-wdx-w.azurewebsites.net/ids",
                 ClientId = "idmgr_client",
-                RedirectUri = "https://localhost:44337",
+                RedirectUri = "https://dev-sso-identity-eu-w-wdx-w.azurewebsites.net/",
                 ResponseType = "id_token",
                 UseTokenLifetime = false,
                 Scope = "openid idmgr",
